@@ -1,4 +1,8 @@
-public class Player_WallSlideState : EntityState
+using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Windows;
+
+public class Player_WallSlideState : PlayerState
 {
     public Player_WallSlideState(Player player, StateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {

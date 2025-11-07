@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Windows;
 
-public class Player_BasicAttackState : EntityState
+public class Player_BasicAttackState : PlayerState
 {
     private float attackVelocityTimer;
     private float lastTimeAttacked;
@@ -31,6 +33,7 @@ public class Player_BasicAttackState : EntityState
         anim.SetInteger("basicAttackIndex", comboIndex);
         ApplyAttackVelocity();
     }
+
 
     public override void Update()
     {

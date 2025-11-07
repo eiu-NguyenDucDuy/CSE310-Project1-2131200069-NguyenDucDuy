@@ -34,8 +34,6 @@ public class ParallaxBackground : MonoBehaviour
     private void InitializeLayers()
     {
         foreach (ParallaxLayer layer in backgroundLayers)
-        {
-            layer.calculateImageWidths();
-        }
+            layer.CalculateImageWidth();
     }
 }
