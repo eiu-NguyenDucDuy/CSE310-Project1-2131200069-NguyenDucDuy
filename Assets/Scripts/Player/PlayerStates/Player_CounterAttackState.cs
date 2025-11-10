@@ -23,7 +23,6 @@ public class Player_CounterAttackState : PlayerState
         base.Update();
         player.SetVelocity(0, rb.linearVelocity.y);
 
-
         if (triggerCalled)
             stateMachine.ChangeState(player.idleState);
 

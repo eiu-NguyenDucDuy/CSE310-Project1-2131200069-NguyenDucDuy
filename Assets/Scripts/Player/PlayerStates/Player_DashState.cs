@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class Player_DashState : PlayerState
 {
     private float originalGravityScale;
@@ -20,13 +18,11 @@ public class Player_DashState : PlayerState
         rb.gravityScale = 0;
     }
 
-
     public override void Update()
     {
         base.Update();
         CancelDashIfNeeded();
         player.SetVelocity(player.dashSpeed * dashDir, 0);
-
 
         if (stateTimer < 0)
         {

@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class Player_WallSlideState : PlayerState
 {
     public Player_WallSlideState(Player player, StateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
@@ -10,7 +8,6 @@ public class Player_WallSlideState : PlayerState
     {
         base.Update();
         HandleWallSlide();
-
 
         if (input.Player.Jump.WasPressedThisFrame())
             stateMachine.ChangeState(player.wallJumpState);

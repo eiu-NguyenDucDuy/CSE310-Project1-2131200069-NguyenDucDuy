@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class EnemyState : EntityState
 {
     protected Enemy enemy;
@@ -10,8 +8,8 @@ public class EnemyState : EntityState
 
         rb = enemy.rb;
         anim = enemy.anim;
+        stats = enemy.stats;
     }
-
 
     public override void UpdateAnimationParameters()
     {

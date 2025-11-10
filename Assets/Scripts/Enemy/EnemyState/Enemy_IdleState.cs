@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class Enemy_IdleState : Enemy_GroundedState
 {
     public Enemy_IdleState(Enemy enemy, StateMachine stateMachine, string animBoolName) : base(enemy, stateMachine, animBoolName)
@@ -19,6 +17,5 @@ public class Enemy_IdleState : Enemy_GroundedState
 
         if (stateTimer < 0)
             stateMachine.ChangeState(enemy.moveState);
-
     }
 }

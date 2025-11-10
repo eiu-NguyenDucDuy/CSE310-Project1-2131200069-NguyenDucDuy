@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 7558095042060965253}
   - component: {fileID: -5778359362662130281}
   m_Layer: 0
-  m_Name: OnHitVFX
+  m_Name: VFX_OnHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

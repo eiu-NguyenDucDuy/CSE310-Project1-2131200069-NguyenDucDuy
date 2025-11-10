@@ -9,7 +9,6 @@ public class Enemy_BattleState : EnemyState
     {
     }
 
-
     public override void Enter()
     {
         base.Enter();
@@ -63,5 +62,4 @@ public class Enemy_BattleState : EnemyState
 
         return player.position.x > enemy.transform.position.x ? 1 : -1;
     }
-
 }

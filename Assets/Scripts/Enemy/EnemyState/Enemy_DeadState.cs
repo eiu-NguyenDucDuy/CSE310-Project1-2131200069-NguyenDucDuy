@@ -19,6 +19,4 @@ public class Enemy_DeadState : EnemyState
 
         stateMachine.SwitchOffStateMachine();
     }
-
-
 }

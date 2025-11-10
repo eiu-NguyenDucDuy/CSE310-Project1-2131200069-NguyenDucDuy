@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class Enemy_AnimationTriggers : Entity_AnimationTriggers
 {
     private Enemy enemy;
@@ -11,7 +9,6 @@ public class Enemy_AnimationTriggers : Entity_AnimationTriggers
         enemy = GetComponentInParent<Enemy>();
         enemyVfx = GetComponentInParent<Enemy_VFX>();
     }
-
 
     private void EnableCounterWindow()
     {

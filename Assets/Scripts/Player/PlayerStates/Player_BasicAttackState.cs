@@ -9,8 +9,7 @@ public class Player_BasicAttackState : PlayerState
     private int attackDir;
     private int comboIndex = 1;
     private int comboLimit = 3;
-    private const int FirstComboIndex = 1;
-
+    private const int FirstComboIndex = 1; // We start combo index with number 1, this parametr is used in the Animator.
 
     public Player_BasicAttackState(Player player, StateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
@@ -26,6 +25,7 @@ public class Player_BasicAttackState : PlayerState
         base.Enter();
         comboAttackQueued = false;
         ResetComboIndexIfNeeded();
+        SyncAttackSpeed();
 
         // Define attack direction according to input
         attackDir = player.moveInput.x != 0 ? ((int)player.moveInput.x) : player.facingDir;
@@ -33,7 +33,6 @@ public class Player_BasicAttackState : PlayerState
         anim.SetInteger("basicAttackIndex", comboIndex);
         ApplyAttackVelocity();
     }
-
 
     public override void Update()
     {
@@ -86,7 +85,6 @@ public class Player_BasicAttackState : PlayerState
         attackVelocityTimer = player.attackVelocityDuration;
         player.SetVelocity(attackVelocity.x * attackDir, attackVelocity.y);
     }
-
 
     private void ResetComboIndexIfNeeded()
     {

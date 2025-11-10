@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class Player_JumpAttackState : PlayerState
 {
     private bool touchedGround;
@@ -30,5 +28,4 @@ public class Player_JumpAttackState : PlayerState
         if (triggerCalled && player.groundDetected)
             stateMachine.ChangeState(player.idleState);
     }
-
 }

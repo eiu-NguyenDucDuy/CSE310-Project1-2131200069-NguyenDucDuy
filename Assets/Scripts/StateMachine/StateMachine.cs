@@ -1,10 +1,7 @@
-using UnityEngine;
-
 public class StateMachine
 {
     public EntityState currentState { get; private set; }
     public bool canChangeState;
-
 
     public void Initialize(EntityState startState)
     {

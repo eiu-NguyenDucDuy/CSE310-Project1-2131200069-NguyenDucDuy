@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class Enemy_Skeleton : Enemy, ICounterable
 {
     public bool CanBeCountered { get => canBeStunned; }
@@ -30,5 +28,4 @@ public class Enemy_Skeleton : Enemy, ICounterable
 
         stateMachine.ChangeState(stunnedState);
     }
-
 }

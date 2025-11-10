@@ -6,11 +6,10 @@ public class Entity : MonoBehaviour
 {
     public event Action OnFlipped;
 
-
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
+    public Entity_Stats stats { get; private set; }
     protected StateMachine stateMachine;
-
 
     private bool facingRight = true;
     public int facingDir { get; private set; } = 1;
@@ -25,18 +24,18 @@ public class Entity : MonoBehaviour
     public bool groundDetected { get; private set; }
     public bool wallDetected { get; private set; }
 
-    // Condition variables
     private bool isKnocked;
     private Coroutine knockbackCo;
+    private Coroutine slowDownCo;
 
     protected virtual void Awake()
     {
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        stats = GetComponent<Entity_Stats>();
 
         stateMachine = new StateMachine();
     }
-
 
     protected virtual void Start()
     {
@@ -57,6 +56,19 @@ public class Entity : MonoBehaviour
     public virtual void EntityDeath()
     {
 
+    }
+
+    public virtual void SlowDownEntity(float duration, float slowMultiplier)
+    {
+        if (slowDownCo != null)
+            StopCoroutine(slowDownCo);
+
+        slowDownCo = StartCoroutine(SlowDownEntityCo(duration, slowMultiplier));
+    }
+
+    protected virtual IEnumerator SlowDownEntityCo(float duration, float slowMultiplier)
+    {
+        yield return null;
     }
 
     public void ReciveKnockback(Vector2 knockback, float duration)
@@ -106,7 +118,6 @@ public class Entity : MonoBehaviour
     {
         groundDetected = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
 
-
         if (secondaryWallCheck != null)
         {
             wallDetected = Physics2D.Raycast(primaryWallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround)
@@ -114,7 +125,6 @@ public class Entity : MonoBehaviour
         }
         else
             wallDetected = Physics2D.Raycast(primaryWallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
-
     }
     protected virtual void OnDrawGizmos()
     {

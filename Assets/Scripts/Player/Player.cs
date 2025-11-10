@@ -26,13 +26,12 @@ public class Player : Entity
     public float comboResetTime = 1;
     private Coroutine queuedAttackCo;
 
-
     [Header("Movement details")]
     public float moveSpeed;
     public float jumpForce = 5;
     public Vector2 wallJumpForce;
     [Range(0, 1)]
-    public float inAirMoveMultiplier = .7f;
+    public float inAirMoveMultiplier = .7f; // Should be from 0 to 1;
     [Range(0, 1)]
     public float wallSlideSlowMultiplier = .7f;
     [Space]
@@ -45,7 +44,6 @@ public class Player : Entity
         base.Awake();
 
         input = new PlayerInputSet();
-
 
         idleState = new Player_IdleState(this, stateMachine, "idle");
         moveState = new Player_MoveState(this, stateMachine, "move");
@@ -64,6 +62,42 @@ public class Player : Entity
     {
         base.Start();
         stateMachine.Initialize(idleState);
+    }
+
+    protected override IEnumerator SlowDownEntityCo(float duration, float slowMultiplier)
+    {
+        float originalMoveSpeed = moveSpeed;
+        float originalJumpForce = jumpForce;
+        float originalAnimSpeed = anim.speed;
+        Vector2 originalWallJump = wallJumpForce;
+        Vector2 originalJumpAttack = jumpAttackVelocity;
+        Vector2[] originalAttackVelocity = attackVelocity;
+
+        float speedMultiplier = 1 - slowMultiplier;
+
+        moveSpeed = moveSpeed * speedMultiplier;
+        jumpForce = jumpForce * speedMultiplier;
+        anim.speed = anim.speed * speedMultiplier;
+        wallJumpForce = wallJumpForce * speedMultiplier;
+        jumpAttackVelocity = jumpAttackVelocity * speedMultiplier;
+
+        for (int i = 0; i < attackVelocity.Length; i++)
+        {
+            attackVelocity[i] = attackVelocity[i] * speedMultiplier;
+        }
+
+        yield return new WaitForSeconds(duration);
+
+        moveSpeed = originalMoveSpeed;
+        jumpForce = originalJumpForce;
+        anim.speed = originalAnimSpeed;
+        wallJumpForce = originalWallJump;
+        jumpAttackVelocity = originalJumpAttack;
+
+        for (int i = 0; i < attackVelocity.Length; i++)
+        {
+            attackVelocity[i] = originalAttackVelocity[i];
+        }
     }
 
     public override void EntityDeath()
