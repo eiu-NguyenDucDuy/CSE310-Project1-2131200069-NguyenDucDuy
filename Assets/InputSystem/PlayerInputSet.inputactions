@@ -58,6 +58,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Spell",
+                    "type": "Button",
+                    "id": "dbb1563d-1e5f-4dee-a874-6923b86a35a4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -168,6 +177,17 @@
                     "processors": "",
                     "groups": ";Keyboard & Mouse",
                     "action": "ToggleSkillTreeUI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "79f81236-57ad-4d18-b792-a85edd2f2532",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard & Mouse",
+                    "action": "Spell",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

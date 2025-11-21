@@ -21,7 +21,6 @@ public class Player_Combat : Entity_Combat
                 counterable.HandleCounter();
                 hasPerformedCounter = true;
             }
-
         }
 
         return hasPerformedCounter;
