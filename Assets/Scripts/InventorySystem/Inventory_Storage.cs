@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Inventory_Storage : Inventory_Base
@@ -102,22 +103,19 @@ public class Inventory_Storage : Inventory_Base
         if (stackableItem != null)
             stackableItem.AddStack();
         else
-            materialStash.Add(itemToAdd);
+        {
+            var newItemToAdd = new Inventory_Item(itemToAdd.itemData);
+            materialStash.Add(newItemToAdd);
+        }
+
 
         TriggerUpdateUI();
+        materialStash = materialStash.OrderBy(item => item.itemData.name).ToList();
     }
 
     public Inventory_Item StackableInStash(Inventory_Item itemToAdd)
     {
-        List<Inventory_Item> stackableItems = materialStash.FindAll(item => item.itemData == itemToAdd.itemData);
-
-        foreach (var stackable in stackableItems)
-        {
-            if (stackable.CanAddStack())
-                return stackable;
-        }
-
-        return null;
+        return materialStash.Find(item => item.itemData == itemToAdd.itemData && item.CanAddStack());
     }
 
     public void SetInventory(Inventory_Player inventory) => this.playerInventory = inventory;
