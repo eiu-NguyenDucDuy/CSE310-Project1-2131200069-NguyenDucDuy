@@ -3,7 +3,7 @@ using System.Text;
 using UnityEngine;
 
 [Serializable]
-public class Inventory_Item 
+public class Inventory_Item
 {
     private string itemId;
 
@@ -51,7 +51,7 @@ public class Inventory_Item
 
     private EquipmentDataSO EquipmentData()
     {
-        if(itemData is EquipmentDataSO equipment)
+        if (itemData is EquipmentDataSO equipment)
             return equipment;
 
         return null;
@@ -64,7 +64,7 @@ public class Inventory_Item
     public string GetItemInfo()
     {
         StringBuilder sb = new StringBuilder();
-        
+
         if (itemData.itemType == ItemType.Material)
         {
             sb.AppendLine("");

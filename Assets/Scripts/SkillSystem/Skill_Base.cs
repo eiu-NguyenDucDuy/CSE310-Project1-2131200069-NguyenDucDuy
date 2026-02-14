@@ -3,7 +3,7 @@ using UnityEngine;
 public class Skill_Base : MonoBehaviour
 {
     public Player_SkillManager skillManager { get; private set; }
-    public Player player { get ; private set; }
+    public Player player { get; private set; }
     public DamageScaleData damageScaleData { get; private set; }
 
 
@@ -41,7 +41,7 @@ public class Skill_Base : MonoBehaviour
 
     public virtual bool CanUseSkill()
     {
-        if(upgradeType == SkillUpgradeType.None)
+        if (upgradeType == SkillUpgradeType.None)
             return false;
 
         if (OnCooldown())
@@ -50,10 +50,12 @@ public class Skill_Base : MonoBehaviour
             return false;
         }
 
-        return true;    
+        return true;
     }
 
     protected bool Unlocked(SkillUpgradeType upgradeToCheck) => upgradeType == upgradeToCheck;
+    public SkillUpgradeType GetUpgrade() => upgradeType;
+    public SkillType GetSkillType() => skillType;
 
 
     protected bool OnCooldown() => Time.time < lastTimeUsed + cooldown;
