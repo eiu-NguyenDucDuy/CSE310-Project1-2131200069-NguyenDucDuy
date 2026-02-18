@@ -9,7 +9,7 @@ public class ItemEffect_Buff : ItemEffect_DataSO
     [SerializeField] private float duration;
     [SerializeField] private string source = Guid.NewGuid().ToString();
 
-    
+
     public override bool CanBeUsed(Player player)
     {
 
@@ -27,7 +27,7 @@ public class ItemEffect_Buff : ItemEffect_DataSO
 
     public override void ExecuteEffect()
     {
-        player.stats.ApplyBuff(buffsToApply,duration,source);
+        player.stats.ApplyBuff(buffsToApply, duration, source);
         player = null;
     }
 }
