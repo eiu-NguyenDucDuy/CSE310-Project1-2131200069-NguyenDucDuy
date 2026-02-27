@@ -12,7 +12,7 @@ public class UI_EquipSlot : UI_ItemSlot
 
     public override void OnPointerDown(PointerEventData eventData)
     {
-        if(itemInSlot == null) 
+        if (itemInSlot == null)
             return;
 
         inventory.UnequipItem(itemInSlot);

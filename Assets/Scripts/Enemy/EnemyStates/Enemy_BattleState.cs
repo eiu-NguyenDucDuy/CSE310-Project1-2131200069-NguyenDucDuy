@@ -16,7 +16,7 @@ public class Enemy_BattleState : EnemyState
         base.Enter();
         UpdateBattleTimer();
 
-        if(player == null)
+        if (player == null)
             player = enemy.GetPlayerReference();
 
         if (ShouldRetreat())

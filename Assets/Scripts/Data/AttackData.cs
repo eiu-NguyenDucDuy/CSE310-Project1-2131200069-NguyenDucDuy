@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class AttackData 
+public class AttackData
 {
     public float phyiscalDamage;
     public float elementalDamage;

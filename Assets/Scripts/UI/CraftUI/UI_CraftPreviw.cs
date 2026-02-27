@@ -20,7 +20,7 @@ public class UI_CraftPreviw : MonoBehaviour
         this.storage = storage;
 
         craftPreviwSlots = GetComponentsInChildren<UI_CraftPreviwSlot>();
-        foreach(var slot in craftPreviwSlots)
+        foreach (var slot in craftPreviwSlots)
             slot.gameObject.SetActive(false);
     }
 
@@ -37,7 +37,7 @@ public class UI_CraftPreviw : MonoBehaviour
 
         UpdateCraftPreviwSlots();
     }
-    
+
 
     public void UpdateCraftPreviw(ItemDataSO itemData)
     {

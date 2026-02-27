@@ -113,10 +113,10 @@ public class UI_StatSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             case StatType.IceResistance:
                 value = playerStats.GetElementalResistance(ElementType.Ice) * 100;
                 break;
-                case StatType.FireResistance:
+            case StatType.FireResistance:
                 value = playerStats.GetElementalResistance(ElementType.Fire) * 100;
                 break;
-                case StatType.LightningResistance:
+            case StatType.LightningResistance:
                 value = playerStats.GetElementalResistance(ElementType.Lightning) * 100;
                 break;
         }

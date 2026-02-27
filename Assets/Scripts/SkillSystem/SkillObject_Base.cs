@@ -28,7 +28,7 @@ public class SkillObject_Base : MonoBehaviour
         {
             IDamageable damgable = target.GetComponent<IDamageable>();
 
-            if(damgable == null)
+            if (damgable == null)
                 continue;
 
             AttackData attackData = playerStats.GetAttackData(damageScaleData);
@@ -80,7 +80,7 @@ public class SkillObject_Base : MonoBehaviour
 
     protected virtual void OnDrawGizmos()
     {
-        if(targetCheck == null)
+        if (targetCheck == null)
             targetCheck = transform;
 
         Gizmos.DrawWireSphere(targetCheck.position, checkRadius);

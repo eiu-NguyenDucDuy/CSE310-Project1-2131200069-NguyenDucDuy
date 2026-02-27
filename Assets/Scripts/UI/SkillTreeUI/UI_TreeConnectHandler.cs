@@ -24,7 +24,7 @@ public class UI_TreeConnectHandler : MonoBehaviour
 
     private void Awake()
     {
-        if(connectionImage != null)
+        if (connectionImage != null)
             originalColor = connectionImage.color;
     }
 
@@ -58,8 +58,8 @@ public class UI_TreeConnectHandler : MonoBehaviour
 
             detail.childNode.SetPosition(targetPosition);
             detail.childNode.SetConnectionImage(connectionImage);
-            detail.childNode.transform.SetAsLastSibling(); 
-        }       
+            detail.childNode.transform.SetAsLastSibling();
+        }
     }
 
     public void UpdateAllConnections()
@@ -68,7 +68,7 @@ public class UI_TreeConnectHandler : MonoBehaviour
 
         foreach (var node in connectionDetails)
         {
-            if(node.childNode == null) continue;
+            if (node.childNode == null) continue;
             node.childNode?.UpdateConnections();
         }
     }

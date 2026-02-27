@@ -13,7 +13,7 @@ public class UI_StatToolTip : UI_ToolTip
         statToolTipText = GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    public void ShowToolTip(bool show, RectTransform targetRect,StatType statType)
+    public void ShowToolTip(bool show, RectTransform targetRect, StatType statType)
     {
         base.ShowToolTip(show, targetRect);
         statToolTipText.text = GetStatTextByType(statType);

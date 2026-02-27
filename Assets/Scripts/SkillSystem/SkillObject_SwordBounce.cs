@@ -34,7 +34,7 @@ public class SkillObject_SwordBounce : SkillObject_Sword
 
         if (Vector2.Distance(transform.position, nextTarget.position) < .75f)
         {
-            DamageEnemiesInRadius(transform,1);
+            DamageEnemiesInRadius(transform, 1);
             BounceToNextTarget();
 
             if (bounceCount == 0 || nextTarget == null)
@@ -74,7 +74,7 @@ public class SkillObject_SwordBounce : SkillObject_Sword
     {
         List<Transform> validTarget = GetValidTargets();
 
-        int randomIndex = Random.Range(0,validTarget.Count);
+        int randomIndex = Random.Range(0, validTarget.Count);
 
         Transform nextTarget = validTarget[randomIndex];
         selectedBefore.Add(nextTarget);
@@ -89,11 +89,11 @@ public class SkillObject_SwordBounce : SkillObject_Sword
 
         foreach (var enemy in aliveTargets)
         {
-            if(enemy != null && selectedBefore.Contains(enemy.transform) == false)
+            if (enemy != null && selectedBefore.Contains(enemy.transform) == false)
                 validTargets.Add(enemy.transform);
         }
 
-        if(validTargets.Count > 0)
+        if (validTargets.Count > 0)
             return validTargets;
         else
         {
@@ -104,7 +104,7 @@ public class SkillObject_SwordBounce : SkillObject_Sword
 
     private List<Transform> GetAliveTargets()
     {
-        List<Transform> aliveTargets = new List<Transform> ();
+        List<Transform> aliveTargets = new List<Transform>();
 
         foreach (var enemy in enemyTargets)
         {

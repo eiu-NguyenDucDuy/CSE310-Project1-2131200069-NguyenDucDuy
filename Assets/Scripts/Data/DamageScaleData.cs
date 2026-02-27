@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class DamageScaleData 
+public class DamageScaleData
 {
     [Header("Damage")]
     public float phyiscal = 1;

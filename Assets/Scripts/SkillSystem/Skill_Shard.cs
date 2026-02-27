@@ -43,7 +43,7 @@ public class Skill_Shard : Skill_Base
             currentShard.OnExplode += ForceCooldown;
     }
 
-    public void CreateRawShard(Transform target = null,bool shardsCanMove = false)
+    public void CreateRawShard(Transform target = null, bool shardsCanMove = false)
     {
         bool canMove = shardsCanMove != false ? shardsCanMove :
             Unlocked(SkillUpgradeType.Shard_MoveToEnemy) || Unlocked(SkillUpgradeType.Shard_Multicast);
@@ -75,7 +75,7 @@ public class Skill_Shard : Skill_Base
         if (Unlocked(SkillUpgradeType.Shard_Teleport))
             HandleShardTeleport();
 
-        if(Unlocked(SkillUpgradeType.Shard_TeleportHpRewind))
+        if (Unlocked(SkillUpgradeType.Shard_TeleportHpRewind))
             HandleShardHealthRewind();
     }
 
@@ -158,7 +158,7 @@ public class Skill_Shard : Skill_Base
         SetSkillOnCooldown();
     }
 
-   
+
 
     public float GetDetonateTime()
     {

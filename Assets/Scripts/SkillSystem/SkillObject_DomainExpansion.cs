@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SkillObject_DomainExpansion : SkillObject_Base 
+public class SkillObject_DomainExpansion : SkillObject_Base
 {
     private Skill_DomainExpansion domainManager;
 
@@ -40,7 +40,7 @@ public class SkillObject_DomainExpansion : SkillObject_Base
         if (shouldChangeScale)
             transform.localScale = Vector3.Lerp(transform.localScale, targetScale, expandSpeed * Time.deltaTime);
 
-        if (isShrinking && sizeDiffrence <  .1f)
+        if (isShrinking && sizeDiffrence < .1f)
             TerminateDomain();
     }
 
@@ -64,7 +64,7 @@ public class SkillObject_DomainExpansion : SkillObject_Base
             return;
 
         domainManager.AddTarget(enemy);
-        enemy.SlowDownEntity(duration, slowDownPercent,true);
+        enemy.SlowDownEntity(duration, slowDownPercent, true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)

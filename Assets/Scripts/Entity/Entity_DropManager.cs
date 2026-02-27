@@ -37,13 +37,13 @@ public class Entity_DropManager : MonoBehaviour
 
     protected void CreateItemDrop(ItemDataSO itemToDrop)
     {
-        GameObject newItem = Instantiate(itemDropPrefab,transform.position,Quaternion.identity);
+        GameObject newItem = Instantiate(itemDropPrefab, transform.position, Quaternion.identity);
         newItem.GetComponent<Object_ItemPickup>().SetupItem(itemToDrop);
     }
 
     public List<ItemDataSO> RollDrops()
     {
-       
+
 
         List<ItemDataSO> possibleDrops = new List<ItemDataSO>();
         List<ItemDataSO> finalDrops = new List<ItemDataSO>();
@@ -54,7 +54,7 @@ public class Entity_DropManager : MonoBehaviour
         {
             float dropChance = item.GetDropChance();
 
-            if(Random.Range(0,100) <= dropChance)
+            if (Random.Range(0, 100) <= dropChance)
                 possibleDrops.Add(item);
         }
 
@@ -63,8 +63,8 @@ public class Entity_DropManager : MonoBehaviour
 
         // Step 3: Add items to final drop list until rarity limit on entity is reached
 
-        foreach (var item in possibleDrops) 
-        {                                   
+        foreach (var item in possibleDrops)
+        {
             if (maxRarityAmount > item.itemRarity)
             {
                 finalDrops.Add(item);

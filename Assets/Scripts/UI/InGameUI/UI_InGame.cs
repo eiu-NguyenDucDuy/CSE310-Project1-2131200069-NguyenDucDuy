@@ -43,7 +43,7 @@ public class UI_InGame : MonoBehaviour
 
     public void OpenQuickItemOptions(UI_QuickItemSlot quickItemSlot, RectTransform targetRect)
     {
-        if(quickItemOptions == null)
+        if (quickItemOptions == null)
             quickItemOptions = quickItemOptionsParent.GetComponentsInChildren<UI_QuickItemSlotOption>(true);
 
         List<Inventory_Item> consumables = inventory.itemList.FindAll(item => item.itemData.itemType == ItemType.Consumable);
@@ -66,7 +66,7 @@ public class UI_InGame : MonoBehaviour
 
     public UI_SkillSlot GetSkillSlot(SkillType skillType)
     {
-        if(skillSlots == null)
+        if (skillSlots == null)
             skillSlots = GetComponentsInChildren<UI_SkillSlot>(true);
 
         foreach (var slot in skillSlots)
@@ -83,11 +83,11 @@ public class UI_InGame : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        float currentHealth = Mathf.RoundToInt( player.health.GetCurrentHealth());
+        float currentHealth = Mathf.RoundToInt(player.health.GetCurrentHealth());
         float maxHealth = player.stats.GetMaxHealth();
         float sizeDiffrnece = Mathf.Abs(maxHealth - healthRect.sizeDelta.x);
 
-        if(sizeDiffrnece > .1f)
+        if (sizeDiffrnece > .1f)
             healthRect.sizeDelta = new Vector2(maxHealth, healthRect.sizeDelta.y);
 
 

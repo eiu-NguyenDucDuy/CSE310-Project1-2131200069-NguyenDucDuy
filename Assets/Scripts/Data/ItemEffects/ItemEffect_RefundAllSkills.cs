@@ -9,4 +9,4 @@ public class ItemEffect_RefundAllSkills : ItemEffect_DataSO
         UI ui = FindFirstObjectByType<UI>();
         ui.skillTreeUI.RefundAllSkills();
     }
-} 
+}

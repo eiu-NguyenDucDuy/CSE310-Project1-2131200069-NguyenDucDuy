@@ -7,7 +7,7 @@ public class UI_EquipSlotParent : MonoBehaviour
 
     public void UpdateEquipmentSlots(List<Inventory_EquipmentSlot> equipList)
     {
-        if(equipSlots == null)
+        if (equipSlots == null)
             equipSlots = GetComponentsInChildren<UI_EquipSlot>();
 
         for (int i = 0; i < equipSlots.Length; i++)

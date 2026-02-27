@@ -54,7 +54,7 @@ public class Entity_Health : MonoBehaviour, IDamageable
         InvokeRepeating(nameof(RegenerateHealth), 0, regenInterval);
     }
 
-    public virtual bool TakeDamage(float damage,float elementalDamage,ElementType element,Transform damageDealer)
+    public virtual bool TakeDamage(float damage, float elementalDamage, ElementType element, Transform damageDealer)
     {
         if (isDead || canTakeDamage == false)
             return false;
@@ -87,12 +87,12 @@ public class Entity_Health : MonoBehaviour, IDamageable
 
     private bool AttackEvaded()
     {
-        if(entityStats == null)
+        if (entityStats == null)
             return false;
         else
             return UnityEngine.Random.Range(0, 100) < entityStats.GetEvasion();
     }
-    
+
     private void RegenerateHealth()
     {
         if (canRegenerateHealth == false)
@@ -167,12 +167,12 @@ public class Entity_Health : MonoBehaviour, IDamageable
         Vector2 knockback = IsHeavyDamage(damage) ? heavyKnockbackPower : knockbackPower;
         knockback.x = knockback.x * direction;
 
-        return knockback;        
+        return knockback;
     }
     private float CalculateDuration(float damage) => IsHeavyDamage(damage) ? heavyKnockbackDuration : knockbackDuration;
     private bool IsHeavyDamage(float damage)
     {
-        if(entityStats == null)
+        if (entityStats == null)
             return false;
         else
             return damage / entityStats.GetMaxHealth() > heavyDamageThreshold;

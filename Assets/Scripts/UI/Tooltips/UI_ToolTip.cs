@@ -19,7 +19,7 @@ public class UI_ToolTip : MonoBehaviour
             return;
         }
 
-        UpdatePosition(targetRect); 
+        UpdatePosition(targetRect);
     }
 
     private void UpdatePosition(RectTransform targetRect)
@@ -38,7 +38,7 @@ public class UI_ToolTip : MonoBehaviour
 
         if (topY > screenTop)
             targetPosition.y = screenTop - veritcalHalf - offset.y;
-        else if(bottomY < screenBottom)
+        else if (bottomY < screenBottom)
             targetPosition.y = screenBottom + veritcalHalf + offset.y;
 
 

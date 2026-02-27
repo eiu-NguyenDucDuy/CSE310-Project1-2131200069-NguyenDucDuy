@@ -31,7 +31,7 @@ public class Entity_StatusHandler : MonoBehaviour
         entityVfx.StopAllVfx();
     }
 
-    public void ApplyStatusEffect(ElementType element,ElementalEffectData effectData)
+    public void ApplyStatusEffect(ElementType element, ElementalEffectData effectData)
     {
         if (element == ElementType.Ice && CanBeApplied(ElementType.Ice))
             ApplyChillEffect(effectData.chillDuration, effectData.chillSlowMultiplier);
@@ -43,7 +43,7 @@ public class Entity_StatusHandler : MonoBehaviour
             ApplyShockEffect(effectData.shockDuration, effectData.shockDamage, effectData.shockCharge);
     }
 
-    private void ApplyShockEffect(float duration,float damage,float charge)
+    private void ApplyShockEffect(float duration, float damage, float charge)
     {
         float lightningResistance = entityStats.GetElementalResistance(ElementType.Lightning);
         float finalCharge = charge * (1 - lightningResistance);

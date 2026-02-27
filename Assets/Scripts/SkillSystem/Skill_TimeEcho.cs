@@ -18,7 +18,7 @@ public class Skill_TimeEcho : Skill_Base
 
     public float GetPercentOfDamageHealed()
     {
-        if(ShouldBeWisp() == false)
+        if (ShouldBeWisp() == false)
             return 0;
 
         return damagePercentHealed;
@@ -26,7 +26,7 @@ public class Skill_TimeEcho : Skill_Base
 
     public float GetCooldownReduceInSeconds()
     {
-        if(upgradeType != SkillUpgradeType.TimeEcho_CooldownWisp)
+        if (upgradeType != SkillUpgradeType.TimeEcho_CooldownWisp)
             return 0;
 
         return cooldownReducedInSeconds;

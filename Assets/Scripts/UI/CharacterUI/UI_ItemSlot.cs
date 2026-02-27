@@ -37,7 +37,7 @@ public class UI_ItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHand
         {
             if (itemInSlot.itemData.itemType == ItemType.Consumable)
             {
-                
+
                 inventory.TryUseItem(itemInSlot);
             }
             else
@@ -52,7 +52,7 @@ public class UI_ItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHand
     {
         itemInSlot = item;
 
-        if(defaultIcon != null)
+        if (defaultIcon != null)
             defaultIcon.gameObject.SetActive(itemInSlot == null);
 
         if (itemInSlot == null)

@@ -29,7 +29,7 @@ public class SkillObject_SwordSpin : SkillObject_Sword
     {
         float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
 
-        if(distanceToPlayer > maxDistance && rb.simulated == true)
+        if (distanceToPlayer > maxDistance && rb.simulated == true)
             rb.simulated = false;
     }
 

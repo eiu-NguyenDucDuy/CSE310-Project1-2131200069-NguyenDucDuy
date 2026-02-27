@@ -40,7 +40,7 @@ public class VFX_AutoController : MonoBehaviour
         ApplyRandomOffset();
         ApplyRandomRotation();
 
-        if(autoDestroy)
+        if (autoDestroy)
             Destroy(gameObject, destroyDelay);
     }
 
@@ -71,7 +71,7 @@ public class VFX_AutoController : MonoBehaviour
 
     private void ApplyRandomRotation()
     {
-        if(randomRotation == false)
+        if (randomRotation == false)
             return;
 
         float zRotation = Random.Range(minRotation, maxRotation);

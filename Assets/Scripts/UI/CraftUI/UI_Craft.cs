@@ -9,7 +9,7 @@ public class UI_Craft : MonoBehaviour
     private UI_CraftSlot[] craftSlots;
     private UI_CraftListButton[] craftListButtons;
 
-    
+
 
     public void SetupCraftUI(Inventory_Storage storage)
     {
@@ -27,10 +27,10 @@ public class UI_Craft : MonoBehaviour
         craftSlots = GetComponentsInChildren<UI_CraftSlot>(true);
         craftListButtons = GetComponentsInChildren<UI_CraftListButton>(true);
 
-        foreach(var slot in craftSlots)
+        foreach (var slot in craftSlots)
             slot.gameObject.SetActive(false);
 
-        foreach(var button in craftListButtons)
+        foreach (var button in craftListButtons)
             button.SetCraftSlots(craftSlots);
     }
 

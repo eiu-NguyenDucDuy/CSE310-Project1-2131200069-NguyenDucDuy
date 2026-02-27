@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UI_SkillSlot : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler
+public class UI_SkillSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private UI ui;
     private Image skillIcon;
@@ -42,7 +42,7 @@ public class UI_SkillSlot : MonoBehaviour , IPointerEnterHandler, IPointerExitHa
         inputKeyText.text = inputKeyName;
         skillIcon.sprite = selectedSkill.icon;
 
-        if(conflictSlot != null)
+        if (conflictSlot != null)
             conflictSlot.SetActive(false);
     }
 

@@ -38,7 +38,7 @@ public class SkillObject_Shard : SkillObject_Base
         Invoke(nameof(Explode), detonationTime);
     }
 
-    public void SetupShard(Skill_Shard shardManager, float detonationTime, bool canMove, float shardSpeed,Transform target = null)
+    public void SetupShard(Skill_Shard shardManager, float detonationTime, bool canMove, float shardSpeed, Transform target = null)
     {
         this.shardManager = shardManager;
         playerStats = shardManager.player.stats;
@@ -48,7 +48,7 @@ public class SkillObject_Shard : SkillObject_Base
         Invoke(nameof(Explode), detonationTime);
 
         if (canMove)
-            MoveTowardsClosestTarget(shardSpeed,target);
+            MoveTowardsClosestTarget(shardSpeed, target);
     }
 
     public void Explode()
@@ -61,7 +61,7 @@ public class SkillObject_Shard : SkillObject_Base
         Destroy(gameObject);
     }
 
-   
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

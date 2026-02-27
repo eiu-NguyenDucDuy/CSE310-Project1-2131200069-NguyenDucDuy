@@ -57,8 +57,8 @@ public class Skill_DomainExpansion : Skill_Base
     private void CastSpell(Transform target)
     {
         if (upgradeType == SkillUpgradeType.Domain_EchoSpam)
-        { 
-            Vector3 offset = Random.value < .5f ? new Vector2(1,0) : new Vector2(-1,0);
+        {
+            Vector3 offset = Random.value < .5f ? new Vector2(1, 0) : new Vector2(-1, 0);
             skillManager.timeEcho.CreateTimeEcho(target.position + offset);
         }
 
@@ -81,11 +81,11 @@ public class Skill_DomainExpansion : Skill_Base
 
     public float GetDomainDuration()
     {
-        if(upgradeType == SkillUpgradeType.Domain_SlowingDown)
+        if (upgradeType == SkillUpgradeType.Domain_SlowingDown)
             return slowDownDomainDuration;
-        else if(upgradeType == SkillUpgradeType.Domain_ShardSpam)
+        else if (upgradeType == SkillUpgradeType.Domain_ShardSpam)
             return shardCastDomainDuration;
-        else if(upgradeType == SkillUpgradeType.Domain_EchoSpam)
+        else if (upgradeType == SkillUpgradeType.Domain_EchoSpam)
             return echoCastDomainDuration;
 
         return 0;
@@ -120,7 +120,7 @@ public class Skill_DomainExpansion : Skill_Base
             && upgradeType != SkillUpgradeType.Domain_ShardSpam;
     }
 
-   
+
     public void AddTarget(Enemy targetToAdd)
     {
         trappedTargets.Add(targetToAdd);

@@ -12,7 +12,7 @@ public class UI_ItemToolTip : UI_ToolTip
     [SerializeField] private Transform merchnatInfo;
     [SerializeField] private Transform inventoryInfo;
 
-    public void ShowToolTip(bool show, RectTransform targetRect,Inventory_Item itemToShow,bool buyPrice = false,bool showMerchantInfo = false)
+    public void ShowToolTip(bool show, RectTransform targetRect, Inventory_Item itemToShow, bool buyPrice = false, bool showMerchantInfo = false)
     {
         base.ShowToolTip(show, targetRect);
 
@@ -25,13 +25,13 @@ public class UI_ItemToolTip : UI_ToolTip
         string fullStackPrice = ($"Price:{price}x{itemToShow.stackSize} - {totalPrice}g.");
         string singleStackPrice = ($"Price:{price}g.");
 
-        
+
         itemPrice.text = itemToShow.stackSize > 1 ? fullStackPrice : singleStackPrice;
         itemType.text = itemToShow.itemData.itemType.ToString();
         itemInfo.text = itemToShow.GetItemInfo();
 
         string color = GetColorByRarity(itemToShow.itemData.itemRarity);
-        itemName.text = GetColoredText(color,itemToShow.itemData.itemName);
+        itemName.text = GetColoredText(color, itemToShow.itemData.itemName);
     }
 
     private string GetColorByRarity(int rarity)

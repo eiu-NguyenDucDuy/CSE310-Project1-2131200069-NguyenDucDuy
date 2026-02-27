@@ -41,9 +41,9 @@ public class Entity_VFX : MonoBehaviour
         if (element == ElementType.Fire)
             StartCoroutine(PlayStatusVfxCo(duration, burnVfx));
 
-        if(element == ElementType.Lightning)
+        if (element == ElementType.Lightning)
             StartCoroutine(PlayStatusVfxCo(duration, shockVfx));
-            
+
     }
 
     public void StopAllVfx()
@@ -75,7 +75,7 @@ public class Entity_VFX : MonoBehaviour
         sr.color = Color.white;
     }
 
-    public void CreateOnHitVFX(Transform target,bool isCrit,ElementType element)
+    public void CreateOnHitVFX(Transform target, bool isCrit, ElementType element)
     {
         GameObject hitPrefab = isCrit ? critHitVfx : hitVfx;
         GameObject vfx = Instantiate(hitPrefab, target.position, Quaternion.identity);
@@ -91,7 +91,7 @@ public class Entity_VFX : MonoBehaviour
         {
             case ElementType.Ice:
                 return chillVfx;
-                case ElementType.Fire:
+            case ElementType.Fire:
                 return burnVfx;
             case ElementType.Lightning:
                 return shockVfx;
@@ -103,7 +103,7 @@ public class Entity_VFX : MonoBehaviour
 
     public void PlayOnDamageVfx()
     {
-        if(onDamageVfxCoroutine != null)
+        if (onDamageVfxCoroutine != null)
             StopCoroutine(onDamageVfxCoroutine);
 
         onDamageVfxCoroutine = StartCoroutine(OnDamageVfxCo());

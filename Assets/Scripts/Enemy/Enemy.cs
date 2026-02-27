@@ -27,7 +27,7 @@ public class Enemy : Entity
     [Header("Movement details")]
     public float idleTime = 2;
     public float moveSpeed = 1.4f;
-    [Range(0,2)]
+    [Range(0, 2)]
     public float moveAnimSpeedMultiplier = 1;
 
     [Header("Player detection")]
@@ -132,6 +132,6 @@ public class Enemy : Entity
 
     private void OnDisable()
     {
-       Player.OnPlayerDeath -= HandlePlayerDeath;  
+        Player.OnPlayerDeath -= HandlePlayerDeath;
     }
 }

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class ElementalEffectData 
+public class ElementalEffectData
 {
     public float chillDuration;
     public float chillSlowMultiplier;
@@ -14,7 +14,7 @@ public class ElementalEffectData
     public float shockDamage;
     public float shockCharge;
 
-    public ElementalEffectData(Entity_Stats entityStats,DamageScaleData damageScale)
+    public ElementalEffectData(Entity_Stats entityStats, DamageScaleData damageScale)
     {
         chillDuration = damageScale.chillDuration;
         chillSlowMultiplier = damageScale.chillSlowMulitplier;

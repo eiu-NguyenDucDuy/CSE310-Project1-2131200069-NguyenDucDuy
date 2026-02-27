@@ -15,7 +15,7 @@ public class SkillObject_TimeEcho : SkillObject_Base
     private Player_SkillManager skillManager;
     private Entity_StatusHandler statusHandler;
 
-    public int maxAttacks { get ; private set; }    
+    public int maxAttacks { get; private set; }
 
     public void SetupEcho(Skill_TimeEcho echoManager)
     {
@@ -95,12 +95,12 @@ public class SkillObject_TimeEcho : SkillObject_Base
         float xOffset = transform.position.x < lastTarget.position.x ? 1 : -1;
 
         if (canDuplicate)
-            echoManager.CreateTimeEcho(lastTarget.position + new Vector3(xOffset,0));
+            echoManager.CreateTimeEcho(lastTarget.position + new Vector3(xOffset, 0));
     }
 
     public void HandleDeath()
     {
-        Instantiate(onDeathVfx, transform.position,Quaternion.identity);
+        Instantiate(onDeathVfx, transform.position, Quaternion.identity);
 
         if (echoManager.ShouldBeWisp())
             TurnIntoWisp();
@@ -120,7 +120,7 @@ public class SkillObject_TimeEcho : SkillObject_Base
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, whatIsGround);
 
-        if(hit.collider != null)
+        if (hit.collider != null)
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
     }
 }
