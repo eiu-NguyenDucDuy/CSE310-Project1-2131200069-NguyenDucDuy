@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e2186504f16624eaeed14445d98566, type: 3}
+  m_Name: Quest - Bone Hunt
+  m_EditorClassIdentifier: 
+  questSaveId: 834cfa09ad9151d4283b30fe947616a4
+  questType: 0
+  questName: Bone Hunt
+  description: Used to be a quite place, just pickaxe and ale. Now it's bones and
+    bother. I'd take care of 'em myself, but me knees ain't what they used to be.
+    Go knock a few of 'em back into dirt for me, will ye?
+  questGoal: '- Eliminate skeletons:'
+  questTargetId: enemy_skeleton
+  requiredAmount: 2
+  itemToDeliver: {fileID: 0}
+  rewardType: 0
+  rewardItems:
+  - itemData: {fileID: 11400000, guid: 37c0b3204301de74c9bfbc5950b936b8, type: 2}
+    stackSize: 1
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: 8a2e5088063f5dc49ba535db7a432109, type: 2}
+    stackSize: 2
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: 6976f03d075ebed40a2b56ca164a566f, type: 2}
+    stackSize: 1
+    itemEffect: {fileID: 0}
