@@ -3,6 +3,7 @@ using UnityEngine;
 public class Object_Merchant : Object_NPC, IInteractable
 {
     [Header("Quest & Dialogue")]
+    [SerializeField] private DialogueLineSO firstDialogueLine;
     [SerializeField] private QuestDataSO[] quests;
 
     private Inventory_Player inventory;
@@ -28,9 +29,11 @@ public class Object_Merchant : Object_NPC, IInteractable
     {
         base.Interact();
 
-        ui.OpenQuestUI(quests);
 
-        //ui.merchantUI.SetupMerchantUI(merchant,inventory);
+        ui.merchantUI.SetupMerchantUI(merchant, inventory);
+        ui.OpenDialogueUI(firstDialogueLine, new DialogueNpcData(rewardNpc, quests));
+
+        //ui.OpenQuestUI(quests);
         //ui.OpenMerchantUI(true);
     }
 
